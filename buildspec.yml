@@ -5,7 +5,6 @@ phases:
     runtime-versions:
       java: corretto17
     commands:
-      - apt-get update; apt-get install -y java-17-amazon-corretto-jdk
       - update-alternatives --auto javac
       - update-alternatives --auto java
       
