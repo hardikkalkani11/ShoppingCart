@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       java: corretto17
     commands:
-      - yum update; yum install -y java-17-amazon-corretto-jdk
+      - yum update; sudo yum install java-17-amazon-corretto -y
       - update-alternatives --auto javac
       - update-alternatives --auto java
       
