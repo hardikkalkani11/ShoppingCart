@@ -6,9 +6,6 @@ phases:
       java: corretto17
     commands:
       - yum update; sudo yum install java-17-amazon-corretto -y
-      - update-alternatives --auto javac
-      - update-alternatives --auto java
-      
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
