@@ -4,16 +4,21 @@ phases:
   install:
     runtime-versions:
       java: corretto17
+    commands:
+      - apt-get update; apt-get install -y java-17-amazon-corretto-jdk
+      - update-alternatives --auto javac
+      - update-alternatives --auto java
+      
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - cd ${CODEBUILD_SRC_DIR}/(...) && mvn package
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/shoppingcart.jar
+      - shoppingcart.jar
